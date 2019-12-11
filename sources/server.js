@@ -6,7 +6,7 @@ const logger = require('./logger/logger');
 const { setupRoutes } = require('./modules/modules');
 
 const app = new Koa();
-const PORT = 15700;
+const PORT = process.env.PORT || 15700;
 const bodyParserToUse = bodyParser({
   jsonLimit: '50mb'
 });
