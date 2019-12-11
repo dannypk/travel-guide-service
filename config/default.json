@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "name": "travel-guide-service",
+  "env": "local",
+  "logging": {
+    "level": "info",
+    "filename": "./log/log.json"
+  }
+}

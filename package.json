@@ -1,0 +1,21 @@
+{
+  "name": "travel-guide-service",
+  "version": "1.0.0",
+  "description": "API for travel guide",
+  "main": "./sources/server.js",
+  "scripts": {
+    "test": "jest --config=./jest.config.json",
+    "start": "nodemon ./sources/server.js",
+    "doc": "apidoc -i sources/modules -o doc/",
+    "lint": "eslint ./config ./sources --ext .js --ext .json"
+  },
+  "author": "daniel pacurici",
+  "license": "ISC",
+  "dependencies": {
+    "config": "3.2.4",
+    "koa": "2.11.0",
+    "koa-bodyparser": "4.2.1",
+    "koa-router": "7.4.0",
+    "winston": "3.2.1"
+  }
+}
