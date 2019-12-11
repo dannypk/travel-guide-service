@@ -7,7 +7,8 @@
     "test": "jest --config=./jest.config.json",
     "start": "nodemon ./sources/server.js",
     "doc": "apidoc -i sources/modules -o doc/",
-    "lint": "eslint ./config ./sources --ext .js --ext .json"
+    "lint": "eslint ./config ./sources --ext .js --ext .json",
+    "now-build": "node ./build.js"
   },
   "author": "daniel pacurici",
   "license": "ISC",
