@@ -5,10 +5,10 @@
   "main": "./sources/server.js",
   "scripts": {
     "test": "jest --config=./jest.config.json",
-    "start": "nodemon ./sources/server.js",
+    "start": "node ./sources/server.js",
+    "dev": "nodemon ./sources/server.js",
     "doc": "apidoc -i sources/modules -o doc/",
-    "lint": "eslint ./config ./sources --ext .js --ext .json",
-    "now-build": "node ./build.js"
+    "lint": "eslint ./config ./sources --ext .js --ext .json"
   },
   "author": "daniel pacurici",
   "license": "ISC",
@@ -18,5 +18,9 @@
     "koa-bodyparser": "4.2.1",
     "koa-router": "7.4.0",
     "winston": "3.2.1"
+  },
+  "devDependencies": {
+    "@now/node-server": "0.8.2",
+    "babel-cli": "6.26.0"
   }
 }
