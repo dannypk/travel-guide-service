@@ -1,9 +1,12 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const mongo = require('koa-mongo');
 const bodyParser = require('koa-bodyparser');
 
 const logger = require('./logger/logger');
 const { setupRoutes } = require('./modules/modules');
+
+const mongoConfig = require('../db-config');
 
 const app = new Koa();
 const PORT = process.env.PORT || 15700;
@@ -12,6 +15,7 @@ const bodyParserToUse = bodyParser({
 });
 
 app.use(bodyParserToUse);
+app.use(mongo(process.env.MONGOLAB_URI || mongoConfig));
 
 const router = new Router();
 setupRoutes(router);
