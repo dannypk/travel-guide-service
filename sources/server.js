@@ -1,24 +1,25 @@
 const Koa = require('koa');
+const cors = require('@koa/cors');
 const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
+const initDB = require('./db');
 
 const logger = require('./logger/logger');
 const { setupRoutes } = require('./modules/modules');
 
-
-const app = new Koa();
 const PORT = process.env.PORT || 15700;
 const bodyParserToUse = bodyParser({
   jsonLimit: '50mb'
 });
 
-const initDB = require('./db');
 initDB();
-
-app.use(bodyParserToUse);
 
 const router = new Router();
 setupRoutes(router);
+
+const app = new Koa();
+app.use(cors());
+app.use(bodyParserToUse);
 app.use(router.routes());
 
 const server = app.listen(PORT, () => logger.info(`Server Listening on port ${PORT}`));

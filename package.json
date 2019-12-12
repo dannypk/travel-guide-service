@@ -13,6 +13,7 @@
   "author": "daniel pacurici",
   "license": "ISC",
   "dependencies": {
+    "@koa/cors": "2",
     "config": "3.2.4",
     "koa": "2.11.0",
     "koa-bodyparser": "4.2.1",

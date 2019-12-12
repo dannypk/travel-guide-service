@@ -10,7 +10,8 @@ class DestinationService {
       listing_url: 1,
       room_type: 1,
       house_rules: 1,
-      property_type: 1
+      property_type: 1,
+      'images.picture_url': 1
     }, { limit: 10 }).lean();
   }
 }
