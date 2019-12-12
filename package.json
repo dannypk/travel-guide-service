@@ -16,9 +16,8 @@
     "config": "3.2.4",
     "koa": "2.11.0",
     "koa-bodyparser": "4.2.1",
-    "koa-mongo": "1.9.0",
     "koa-router": "7.4.0",
-    "mongodb": "3.4.0",
+    "mongoose": "5.8.0",
     "winston": "3.2.1"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-const COLLECTION_NAME = 'listingsAndReviews';
+const listingsAndReviews = require('../../models/listingAndReviews');
 
 class DestinationService {
   getAvailableAccommodation(destination, db) {
@@ -6,13 +6,12 @@ class DestinationService {
       return [];
     }
     
-    return db.collection(COLLECTION_NAME).find({ "address.market": destination })
-      .project({
-        listing_url: 1,
-        room_type: 1,
-        house_rules: 1,
-        property_type: 1
-      }).limit(10).toArray();
+    return listingsAndReviews.find({ "address.market": destination }, {
+      listing_url: 1,
+      room_type: 1,
+      house_rules: 1,
+      property_type: 1
+    }, { limit: 10 }).lean();
   }
 }
 

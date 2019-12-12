@@ -1,6 +1,5 @@
 const Koa = require('koa');
 const Router = require('koa-router');
-const mongo = require('koa-mongo');
 const bodyParser = require('koa-bodyparser');
 
 const logger = require('./logger/logger');
@@ -13,12 +12,8 @@ const bodyParserToUse = bodyParser({
   jsonLimit: '50mb'
 });
 
-if (!process.env.NODE_ENV || process.env.NODE_ENV !== 'production') {
-  const mongoConfig = require('../db-config');
-  app.use(mongo(mongoConfig));
-} else {
-  app.use(mongo(process.env.MONGOLAB_URI))
-}
+const initDB = require('./db');
+initDB();
 
 app.use(bodyParserToUse);
 
