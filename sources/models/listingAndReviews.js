@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const listingsAndReviews = new Schema();
+const ListingsAndReviewsSchema = new Schema();
 
-module.exports = mongoose.model('ListingsAndReviews', listingsAndReviews, 'listingsAndReviews');
+ListingsAndReviewsSchema.set('toJSON', {
+  transform: (doc, ret) => {
+    ret.price = ret.price.toString();
+    return ret;
+  },
+});
+module.exports = mongoose.model('ListingsAndReviewsSchema', ListingsAndReviewsSchema, 'listingsAndReviews');
