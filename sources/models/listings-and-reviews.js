@@ -1,3 +1,5 @@
+// This file is named like this because of the DB sample I am using (from MongoDB Cloud)
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

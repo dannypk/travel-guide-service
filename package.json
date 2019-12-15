@@ -24,6 +24,8 @@
   "devDependencies": {
     "@now/node-server": "0.8.2",
     "babel-cli": "6.26.0",
-    "nodemon": "2.0.2"
+    "jest": "24.9.0",
+    "nodemon": "2.0.2",
+    "supertest": "4.0.2"
   }
 }

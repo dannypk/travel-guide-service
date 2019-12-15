@@ -1,4 +1,4 @@
-const listingsAndReviews = require('../../models/listingAndReviews');
+const listingsAndReviews = require('../../models/listings-and-reviews');
 
 class DestinationService {
   async getAvailableAccommodation(destination) {

@@ -1,0 +1,8 @@
+{
+  "roots": [
+    "./sources"
+  ],
+  "notify": true,
+  "verbose": false
+}
+

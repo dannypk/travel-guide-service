@@ -7,7 +7,7 @@ module.exports = {
 
 function setupRoutes(router) {
   /**
-   * @api {get} /destination/available-accommodatin Get possible accomodations for the given destination
+   * @api {get} /destination/available-accommodation Get possible accommodations for the given destination
    * @apiGroup destination
    */
   router.get(`/${config.name}/destination/available-accommodation`, getAvailableAccommodation);
